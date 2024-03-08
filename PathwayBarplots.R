@@ -1,6 +1,7 @@
 
 library(ggplot2)
 
+# Read in data fetched from Enrichr with Python script
 df <- read.csv('pathway_data.csv')
 
 #remove the columns index, column 8 and column 9
