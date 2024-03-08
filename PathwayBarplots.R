@@ -37,7 +37,7 @@ dev.off()
 # Barplot with Odds Ratio
 pdf("pathway_barplot_OR.pdf", width = 15, height = 10)
 
-ggplot(df, aes(x = reorder(Pathway, -Odds.Ratio), y = Odds.Ratio)) +
+ggplot(df, aes(x = reorder(Pathway, Odds.Ratio), y = Odds.Ratio)) + 
   geom_bar(stat = "identity", fill = "#01c0b1") +
   coord_flip() +  
   theme_minimal() +  
@@ -51,4 +51,3 @@ ggplot(df, aes(x = reorder(Pathway, -Odds.Ratio), y = Odds.Ratio)) +
   )
 
 dev.off()
-
