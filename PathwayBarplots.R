@@ -33,7 +33,7 @@ ggplot(df, aes(x = reorder(Pathway, -Adjusted.p.value), y = Adjusted.p.value)) +
 dev.off()
 
 
-# Bar plot with Odds Ratio
+# Barplot with Odds Ratio
 pdf("pathway_barplot_OR.pdf", width = 15, height = 10)
 
 ggplot(df, aes(x = reorder(Pathway, -Odds.Ratio), y = Odds.Ratio)) +
