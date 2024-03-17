@@ -35,9 +35,26 @@ dev.off()
 
 
 # Barplot with Odds Ratio
-pdf("pathway_barplot_OR.pdf", width = 15, height = 10)
+pdf("pathway_barplot_OR_shortest_at_bottoms.pdf", width = 15, height = 10)
 
-ggplot(df, aes(x = reorder(Pathway, Odds.Ratio), y = Odds.Ratio)) + 
+ggplot(df, aes(x = reorder(Pathway, -Odds.Ratio), y = Odds.Ratio)) +
+  geom_bar(stat = "identity", fill = "#01c0b1") +
+  coord_flip() +  
+  theme_minimal() +  
+  geom_text(aes(label = Pathway, y = 0), hjust = 0.0, vjust = 0.8, angle = 0, color = "black", position = position_identity()) +
+  labs(x = "Pathway", y = "Odds Ratio") +
+  theme(
+    axis.text.y = element_blank(), 
+    axis.ticks.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+
+dev.off()
+
+pdf("pathway_barplot_OR_Biggest_at_top.pdf", width = 15, height = 10)
+
+ggplot(df, aes(x = reorder(Pathway, Odds.Ratio), y = Odds.Ratio)) +  # Removed the negative sign for testing
   geom_bar(stat = "identity", fill = "#01c0b1") +
   coord_flip() +  
   theme_minimal() +  

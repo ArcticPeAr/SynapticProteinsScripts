@@ -5,7 +5,8 @@ import pandas as pd
 # Based on https://maayanlab.cloud/Enrichr/help#api with some modifications
 ENRICHR_URL = 'https://maayanlab.cloud/Enrichr/addList'
 genes_str = '\n'.join([
-    'YWHAZ', 'YWHAH', 'NPTX2', 'NPTXR', 'VGF', 'SCG2', 'CPLX2'
+    #'YWHAZ', 'YWHAH', 'NPTX2', 'NPTXR', 'VGF', 'SCG2', 'CPLX2'
+    "GAD1", "NRGN", "SNCG"
 ])
 description = 'Synaptic genes'
 payload = {
@@ -58,4 +59,4 @@ df = df[df['Adjusted p-value'] < 0.05]
 
 
 #For exporting to R the df is saved as a csv file
-df.to_csv('pathway_data.csv', index=False)
+df.to_csv('pathway_data_No_Change_Prots.csv', index=False)
