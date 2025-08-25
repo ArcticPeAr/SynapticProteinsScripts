@@ -94,7 +94,8 @@ else:
     print("Warning: Could not fetch pathway sizes")
     
     
-    
+BioPlanet_df['Genes_Count'] = BioPlanet_df['Genes'].apply(len)
+   
 BioPlanet_df['Overlap'] = BioPlanet_df['Genes_Count'].astype(str) + '/' + BioPlanet_df['Pathway_Size'].astype(str)
 
 
